@@ -11,6 +11,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "autoprefixer": "^9.4.7",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.0",
     "eslint": "^5.12.1",
