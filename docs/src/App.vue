@@ -5,23 +5,25 @@
       id="filePicker"
       :allow-multiple="false"
       @vfp-file-added="fileAdded"
-    >
-      <svg
-        slot="icon"
-        height="40"
-        viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M18 32h12v-12h8l-14-14-14 14h8zm-8 4h28v4h-28z"
-          fill="#CACFD2"
-        />
-      </svg>
-    </file-picker>
-
-    <h2>Usage</h2>
+    />
+    <h3>Usage</h3>
     <pre>
       {{ snippet }}
+    </pre>
+
+    <h2>Complex Example</h2>
+    <file-picker
+      v-if="userHasPickedNoFiles"
+      id="filePicker"
+      :allow-multiple="false"
+      @vfp-file-added="fileAdded2"
+    />
+    <p v-else>
+      User did something and I got files which I can present however I want!
+    </p>
+    <h3>Usage</h3>
+    <pre>
+      {{ snippet2 }}
     </pre>
   </div>
 </template>
@@ -38,16 +40,19 @@ export default {
   data () {
     return {
       snippet: `
-    <file-picker id="filePicker" v-on:vfp-file-added="fileAdded">
-      <svg slot="icon" height="40" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18 32h12v-12h8l-14-14-14 14h8zm-8 4h28v4h-28z" fill="#CACFD2"/>
-      </svg>
-    </file-picker>`
+    <file-picker id="filePicker" v-on:vfp-file-added="fileAdded"></file-picker>`,
+      snippet2: `
+    <file-picker v-if="userHasPickedNoFiles" id="filePicker" v-on:vfp-file-added="fileAdded"></file-picker>
+    <p v-else>User did something and I got files which I can present however I want!</p>`,
+      userHasPickedNoFiles: true
     }
   },
   methods: {
     fileAdded: function (fileList) {
       console.log('vfp:', fileList)
+    },
+    fileAdded2: function () {
+      this.userHasPickedNoFiles = false
     }
   }
 }
@@ -58,12 +63,12 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow:700');
 
 #app {
-  padding: 50px 100px;
+  padding: 0px 100px;
   font-family: 'PT Sans', sans-serif;
 
   h2{
     margin-bottom: 10px;
-    margin-top: 30px;
+    margin-top: 100px;
     font-size: 1.3rem;
     font-family: 'PT Sans Narrow', sans-serif;
     letter-spacing: 0.1rem;

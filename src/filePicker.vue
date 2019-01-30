@@ -11,7 +11,19 @@
       @drop="fileAdded"
     >
       <div class="vfp-iconHolder vfp-gridItem">
-        <slot name="icon" />
+        <slot name="icon">
+          <svg
+            slot="icon"
+            height="40"
+            viewBox="0 0 48 48"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 32h12v-12h8l-14-14-14 14h8zm-8 4h28v4h-28z"
+              fill="#CACFD2"
+            />
+          </svg>
+        </slot>
       </div>
       <input
         id="vfp-filePicker"

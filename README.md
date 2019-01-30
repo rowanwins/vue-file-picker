@@ -2,12 +2,16 @@
 ## About
 A fairly minimal file picker & drop area which aims to stay out of the way of your application. 
 
+[Demo here](https://rowanwins.github.io/vue-file-picker/)
+
 We handle
 - a html [file input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file)
 - a js [drag & drop area](https://developer.mozilla.org/en-US/docs/Web/Events/drop)
 
 You handle
-- What happens after files are recieved
+- What happens after files are recieved, eg
+  - uploading
+  - presentation of the UI
 
 ## Install
 ````
