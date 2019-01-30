@@ -46,8 +46,8 @@ export default {
     }
   },
   methods: {
-    fileAdded: function (file) {
-      console.log(file)
+    fileAdded: function (fileList) {
+      console.log('vfp:', fileList)
     }
   }
 }
