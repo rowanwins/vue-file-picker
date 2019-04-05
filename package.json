@@ -1,8 +1,11 @@
 {
   "name": "vue-file-picker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A HTML5 file picker for VueJS",
   "main": "dist/vue-file-picker.js",
+  "browser": "dist/vue-file-picker.js",
+  "unpkg": "dist/vue-file-picker.js",
+  "module": "src/main.js",
   "scripts": {
     "build": "cross-env webpack --config webpack.config.js --mode production",
     "build:docs": "cross-env webpack --config docs/webpack.config.js --mode production",
